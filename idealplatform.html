@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ideas Harvesting Platform</title>
+  <link rel="stylesheet" href="idealplatform.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cardo&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="container">
+    <h1 class="main-title">Ideas Harvesting Platform</h1>
+    <p class="description">A minimal, skeuomorphic-inspired UI for a platform built to collect and categorize user ideas. Frontend is clean, responsive, and backend is powered by GitHub.(server)<br> I need your help in building this platform</p>
+
+    <ul class="features">
+      <li class="accordion-item">
+        <div class="accordion-header">
+
+          <span>Upload ideas with title, tags, and description</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Share your innovative ideas with the community in a structured format:</p>
+          <ul>
+            <li>Add descriptive titles to capture attention</li>
+            <li>Tag your ideas with relevant keywords</li>
+            <li>Provide detailed descriptions to explain your concepts</li>
+            <li>Attach supporting documents or images</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="accordion-item">
+        <div class="accordion-header">
+         
+          <span>Classify ideas into categories and subtopics</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Organize ideas into meaningful categories for easy discovery:</p>
+          <ul>
+            <li>Create custom categories<span class="detail">(category will automatically update into the database) </span>for different domains</li>
+            <li>Add subtopics to further refine classification<span class="detail">(Use AI for doing this/user can fo manually)</span></li>
+            <li>Browse ideas by popularity, recency, or category</li>
+            <li>Search using filters and keywords</li>
+                
+            <li>
+                if there is a keyword FREELANCE then generate a feild of contact info so that the interested can contact 
+            </li>
+          </ul>
+        </div>
+      </li>
+      
+      <li class="accordion-item">
+        <div class="accordion-header">
+          
+          <span>Work in collaborative groups</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Connect with like-minded innovators to develop ideas:</p>
+          <ul>
+            <li>Create or join interest-based groups</li>
+            <li>Collaborate in real-time using shared workspaces</li>
+            <li>Track progress on group projects</li>
+            <li>Schedule virtual brainstorming sessions</li>
+          </ul>
+        </div>
+      </li>
+      
+      <li class="accordion-item">
+        <div class="accordion-header">
+         
+          <span>Offer and join freelance tasks based on ideas</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Transform ideas into actionable projects:</p>
+          <ul>
+            <li>Post tasks needed to develop your idea</li>
+            <li>Find freelance opportunities in your expertise</li>
+            <li>Set milestones and deliverables</li>
+            <li>Integrated payment system for secure transactions</li>
+          </ul>
+        </div>
+      </li>
+      <span class="pri">WHERE IS PRIVACY OF IDEA
+        <span class="tooltip"><a href="https://example.com" target="_blank">🔒 Privacy methodology</a></span></span>
+      <li class="accordion-item">
+        <div class="accordion-header">
+         
+          <span>Sync backend operations via GitHub for transparency</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Leverage GitHub for open collaboration and version control:</p>
+          <ul>
+            <li>Automatic repository creation for projects</li>
+            <li>Track development progress through commits</li>
+            <li>Contribute to projects via pull requests</li>
+            <li>Maintain transparency in development process</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+
+    <p class="bottom-text">Simple. Powerful. Community-Driven.</p>
+    <footer>
+    @gdukens 
+      
+    </footer>
+  </div>
+
+  <script>  
+    document.addEventListener('DOMContentLoaded', function() {  
+      const accordionHeaders = document.querySelectorAll('.accordion-header');  
+        
+      accordionHeaders.forEach(header => {  
+        header.addEventListener('click', function() {  
+          // Toggle active class on header  
+          this.classList.toggle('active');  
+            
+          // Get the next element (content)  
+          const content = this.nextElementSibling;  
+            
+          // Toggle active class on content  
+          content.classList.toggle('active');  
+            
+          // Close other accordions  
+          accordionHeaders.forEach(otherHeader => {  
+            if (otherHeader !== header) {  
+              otherHeader.classList.remove('active');  
+              otherHeader.nextElementSibling.classList.remove('active');  
+            }  
+          });  
+        });  
+      });  
+    });  
+  </script>  
+   <script>
+    // Enable tap toggle for mobile
+    document.querySelector('.pri').addEventListener('click', function (e) {
+      this.classList.toggle('active');
+      e.stopPropagation(); // prevent bubbling
+    });
+
+    // Hide tooltip if clicked outside
+    document.addEventListener('click', function () {
+      document.querySelector('.pri').classList.remove('active');
+    });
+  </script>
+</body>
+</html>
